@@ -1,0 +1,33 @@
+server:
+  port: 8089
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/jewelry
+    username: postgres
+    password: '0373829264'
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+logging:
+  level:
+    root: info
+    org.springframework: debug
+    '[springboot.jewelry]': DEBUG
+  pattern:
+    dateformat: yyyy-MM-dd HH:mm:ss
+jewelry:
+  app:
+    jwt-secret: khongcochuoibimat
+    jwt-duration: 123456789
+  gdrive:
+    folder:
+      product: 1fkgIXvbjQ4n20FArIiA5Nxb_3oukKcmk
