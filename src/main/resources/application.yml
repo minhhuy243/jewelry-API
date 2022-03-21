@@ -1,10 +1,11 @@
 server:
-  port: 8089
+  port: ${port:8089}
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/jewelry
-    username: postgres
-    password: 1234
+    url: ${JDBC_DATABASE_URL:} #jdbc:postgresql://localhost:5432/jewelry
+    username: ${JDBC_DATABASE_USERNAME:} #postgres
+    password: ${JDBC_DATABASE_PASSWORD:} #1234
+    driver-class-name: ${JDBC_DATABASE_DRIVER:}
   jpa:
     show-sql: true
     generate-ddl: true
@@ -31,8 +32,8 @@ logging:
 jewelry:
   app:
     jwt-secret: khongcochuoibimat
-    jwt-duration: 30000 #900000 # 15 minutes
-    jwt-refresh-duration: 1800000000000 #604800000 # 7 days
+    jwt-duration: 900000 #900000 # 15 minutes
+    jwt-refresh-duration: 604800000 #604800000 # 7 days
   gdrive:
     folder:
       product: 1fkgIXvbjQ4n20FArIiA5Nxb_3oukKcmk
