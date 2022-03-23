@@ -26,7 +26,7 @@ public class GDriveUtils {
 
     private static final String APPLICATION_NAME = "Google Drive-HTH Non"; // Application name
     private static final JacksonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
-    private static final String TOKENS_DIRECTORY_PATH = "/tokens";
+    private static final String TOKENS_DIRECTORY_PATH = "tokens";
     /**
      * Global instance of the scopes required by this quickstart.
      * If modifying these scopes, delete your previously saved tokens/ folder.
