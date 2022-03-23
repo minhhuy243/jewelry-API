@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -jar build/jewelry-api-0.0.1-SNAPSHOT.jar -Dserver.port=$PORT
+web: java -Dserver.port=$PORT -jar jewelry-api/target/jewelry-api-1.0.0-SNAPSHOT.jar
