@@ -66,6 +66,7 @@ public class GDriveUtils {
                 .setAccessType("offline")
                 .build();
 //        LocalServerReceiver receiver = new LocalServerReceiver.Builder().setPort(8082).build();
+        System.out.println("port ne: " + Environment.getProperties().getProperty("server.port"));
         LocalServerReceiver receiver = new LocalServerReceiver.Builder()
                 .setHost("https://jewelry243-api.herokuapp.com")
                 .setPort(Integer.parseInt(Environment.getProperties().getProperty("server.port")))
