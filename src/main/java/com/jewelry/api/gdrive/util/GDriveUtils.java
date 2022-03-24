@@ -69,6 +69,6 @@ public class GDriveUtils {
         LocalServerReceiver receiver = new LocalServerReceiver.Builder()
                 .setHost("jewelry243-api.herokuapp.com")
                 .build();
-        return new AuthorizationCodeInstalledApp(flow, receiver).authorize("user");
+        return new AuthorizationCodeInstalledApp(flow, receiver).authorize(null);
     }
 }
