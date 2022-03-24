@@ -65,7 +65,10 @@ public class GDriveUtils {
                 .setAccessType("offline")
                 .build();
 //        LocalServerReceiver receiver = new LocalServerReceiver.Builder().setPort(8082).build();
-        LocalServerReceiver receiver = new LocalServerReceiver.Builder().setHost("https://jewelry243-api.herokuapp.com").build();
+        LocalServerReceiver receiver = new LocalServerReceiver.Builder()
+                .setHost("https://jewelry243-api.herokuapp.com")
+                .setPort(Integer.parseInt(System.getenv("server.port")))
+                .build();
         return new AuthorizationCodeInstalledApp(flow, receiver).authorize("user");
     }
 }
