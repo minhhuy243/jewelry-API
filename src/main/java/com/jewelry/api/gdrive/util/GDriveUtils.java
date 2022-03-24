@@ -64,7 +64,8 @@ public class GDriveUtils {
                 .setDataStoreFactory(new FileDataStoreFactory(new java.io.File(TOKENS_DIRECTORY_PATH)))
                 .setAccessType("offline")
                 .build();
-        LocalServerReceiver receiver = new LocalServerReceiver.Builder().setPort(8082).build(); // PORT URI OF GOOGLE SERVICE
+//        LocalServerReceiver receiver = new LocalServerReceiver.Builder().setPort(8082).build();
+        LocalServerReceiver receiver = new LocalServerReceiver.Builder().setHost("https://jewelry243-api.herokuapp.com").build();
         return new AuthorizationCodeInstalledApp(flow, receiver).authorize("user");
     }
 }
