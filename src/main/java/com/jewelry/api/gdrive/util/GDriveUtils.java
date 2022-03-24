@@ -11,6 +11,7 @@ import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.client.util.store.FileDataStoreFactory;
 import com.google.api.services.drive.Drive;
 import com.google.api.services.drive.DriveScopes;
+import org.hibernate.cfg.Environment;
 import org.springframework.stereotype.Component;
 
 import java.io.FileNotFoundException;
@@ -67,7 +68,7 @@ public class GDriveUtils {
 //        LocalServerReceiver receiver = new LocalServerReceiver.Builder().setPort(8082).build();
         LocalServerReceiver receiver = new LocalServerReceiver.Builder()
                 .setHost("https://jewelry243-api.herokuapp.com")
-                .setPort(Integer.parseInt(System.getenv("server.port")))
+                .setPort(Integer.parseInt(Environment.getProperties().getProperty("server.port")))
                 .build();
         return new AuthorizationCodeInstalledApp(flow, receiver).authorize("user");
     }
